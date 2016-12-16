@@ -1,0 +1,30 @@
+<div ng-controller='pollsController'>
+  <a href="#!/partial2">Go to Polls</a>
+  <table>
+    <tr>
+      <th>Option</th>
+      <th>Current Count of Votes</th>
+      <th>Action</th>
+    </tr>
+    <tr ng-repeat='poll in polls | filter: {_id:id}'>
+      <td>
+        <p>{{poll.option_one}}</p>
+        <p>{{poll.option_two}}</p>
+        <p>{{poll.option_three}}</p>
+        <p>{{poll.option_four}}</p>
+      </td>
+      <td>
+        <p>{{poll.votes}}</p>
+        <p>{{poll.votes}}</p>
+        <p>{{poll.votes}}</p>
+        <p>{{poll.votes}}</p>
+      </td>
+      <td>
+        <p><button type="submit" ng-click='upVote()'>Vote</button></p>
+        <p><button type="submit" ng-click='upVote()'>Vote</button></p>
+        <p><button type="submit" ng-click='upVote()'>Vote</button></p>
+        <p><button type="submit" ng-click='upVote()'>Vote</button></p>
+      </td>
+    </tr>
+  </table>
+</div>

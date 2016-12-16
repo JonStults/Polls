@@ -1,0 +1,11 @@
+<div ng-controller='createController'>
+  <h3>Put the question and options here: </h3> | <a href="#!/partial2">Cancel</a>
+  <form ng-submit='createPoll(newPoll)'>
+    <p>Question: <input type="text" ng-model='newPoll.question'></p>
+    <p>Option 1: <input type="text" ng-model='newPoll.option_one'></p>
+    <p>Option 2: <input type="text" ng-model='newPoll.option_two'></p>
+    <p>Option 3: <input type="text" ng-model='newPoll.option_three'></p>
+    <p>Option 4: <input type="text" ng-model='newPoll.option_four'></p>
+    <input type="submit" value="Create Poll">
+  </form>
+</div>
