@@ -2,7 +2,7 @@ app.controller('loginController', ['$scope', 'pollsFactory', '$location', functi
   $scope.polls = [];
   $scope.submitUser = function(user){
     pollsFactory.store(user, function(createdUser){
-      $location.url('/partial2');
     })
+    $location.url('/partial2');
   };
 }]);

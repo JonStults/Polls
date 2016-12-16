@@ -1,5 +1,6 @@
 <div ng-controller='pollsController'>
   <a href="#!/partial2">Go to Polls</a>
+  <h3 ng-repeat='poll in polls | filter: {_id:id}'>{{ poll.question }}</h3>
   <table>
     <tr>
       <th>Option</th>
