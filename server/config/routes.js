@@ -7,4 +7,5 @@ module.exports = function(app){
   app.get('/polls', polls.index);
   app.post('/options', polls.option);
   app.post('/vote', polls.update);
+  app.post('/delete/:id', polls.delete);
 }

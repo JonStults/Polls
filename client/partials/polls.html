@@ -17,7 +17,7 @@
         <td>{{ poll.user }}</td>
         <td><a href="#!/poll/{{ poll._id }}">{{ poll.question }}</a></td>
         <td>{{ poll.date | date: 'MMM dd yyyy'}}</td>
-        <td></td>
+        <td ng-show='poll.user === me'><a href="" ng-click='deletePoll(poll)'>Delete</a></td>
       </tr>
     </table>
   </div>

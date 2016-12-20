@@ -23,11 +23,10 @@ module.exports = {
     console.log(req.body.options);
     var poll = new polls({
       question: req.body.question,
-      option_one: req.body.option_one,
-      option_two: req.body.option_two,
-      option_three: req.body.option_three,
-      option_four: req.body.option_four,
-      votes: 0,
+      option_one: {name: req.body.option_one, votes: 0},
+      option_two: {name: req.body.option_two, votes: 0},
+      option_three: {name: req.body.option_three, votes: 0},
+      option_four: {name: req.body.option_four, votes: 0},
       user: req.body.user,
       date: now
     });
@@ -45,12 +44,32 @@ module.exports = {
       if (err){
         console.log(err);
       } else{
-        console.log('successful');
+        if(req.body.num==1){
+          poll.option_one.votes += 1;
+        }
+        if(req.body.num==2){
+          poll.option_two.votes += 1;
+        }
+        if(req.body.num==3){
+          poll.option_three.votes += 1;
+        }
+        if(req.body.num==4){
+          poll.option_four.votes += 1;
+        }
       }
-      poll.votes += req.body.num;
       poll.save(function(){
         res.json({ poll: poll })
       })
     })
+  },
+  delete: function (req, res){
+    polls.remove({_id: req.params.id}, function(err, poll) {
+      if(err){
+          console.log(err);
+      } else {
+          console.log("Successfully Saved:", poll);
+      }
+      res.json({update: "deleted"});
+  })
   }
 }

@@ -4,6 +4,10 @@ app.config(function ($routeProvider) {
     templateUrl: 'partials/login.html',
     controller: 'loginController'
   }),
+  $routeProvider.when('/partial2/:id', {
+    templateUrl: 'partials/polls.html',
+    controller: 'pollsController'
+  }),
   $routeProvider.when('/partial2', {
     templateUrl: 'partials/polls.html',
     controller: 'pollsController'
